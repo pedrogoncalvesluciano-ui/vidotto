@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="theme-color" content="#05070d">
+
+  <meta
+    name="description"
+    content="JESUS CHRONICLES — uma aventura narrativa sobre viagem no tempo, responsabilidade e escolhas."
+  >
+
+  <title>JESUS CHRONICLES</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+
+  <div id="app" class="app-shell">
+
+    <!-- =========================================================
+         FUNDO GLOBAL
+         ========================================================= -->
+
+    <div class="world-background" aria-hidden="true">
+
+      <div class="world-grid"></div>
+
+      <div class="world-aurora aurora-a"></div>
+
+      <div class="world-aurora aurora-b"></div>
+
+      <div class="world-scanlines"></div>
+
+      <div class="world-vignette"></div>
+
+      <div
+        id="backgroundParticles"
+        class="background-particles"
+      ></div>
+
+    </div>
+
+
+    <!-- =========================================================
+         TOPBAR
+         ========================================================= -->
+
+    <header class="topbar">
+
+      <div class="brand-block">
+
+        <div
+          class="brand-mark"
+          aria-hidden="true"
+        >
+          JC
+        </div>
+
+        <div class="brand-copy">
+
+          <strong class="brand-title">
+            JESUS CHRONICLES
+          </strong>
+
+          <span
+            id="phaseLabel"
+            class="brand-subtitle"
+          >
+            PROTOCOLO CRONOLÓGICO
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="topbar-status">
+
+        <div
+          class="status-pill"
+          aria-label="Status da linha temporal"
+        >
+
+          <span class="status-dot"></span>
+
+          <span id="worldStatus">
+            LINHA TEMPORAL ESTÁVEL
+          </span>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+          <button
+            id="quickSaveButton"
+            class="icon-button"
+            type="button"
+            title="Salvar jogo"
+            aria-label="Salvar jogo"
+          >
+            ⇩
+          </button>
+
+
+          <button
+            id="menuButton"
+            class="icon-button"
+            type="button"
+            title="Abrir menu"
+            aria-label="Abrir menu"
+          >
+            ☰
+          </button>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         CONTEÚDO PRINCIPAL
+         ========================================================= -->
+
+    <main
+      id="gameMain"
+      class="game-main"
+    >
+
+
+      <!-- =======================================================
+           TELA INICIAL
+           ======================================================= -->
+
+      <section
+        id="screenTitle"
+        class="screen screen-title active"
+        aria-labelledby="titleHeading"
+      >
+
+        <div
+          class="title-orbit"
+          aria-hidden="true"
+        >
+
+          <span
+            class="title-orbit-ring orbit-one"
+          ></span>
+
+          <span
+            class="title-orbit-ring orbit-two"
+          ></span>
+
+          <span
+            class="title-orbit-ring orbit-three"
+          ></span>
+
+          <span
+            class="title-orbit-core"
+          ></span>
+
+        </div>
+
+
+        <div class="title-content">
+
+          <span class="eyebrow">
+            PROJETO CRONOS // ARQUIVO 01
+          </span>
+
+
+          <h1
+            id="titleHeading"
+            class="game-title"
+          >
+
+            <span>
+              JESUS
+            </span>
+
+            <strong>
+              CHRONICLES
+            </strong>
+
+          </h1>
+
+
+          <p class="title-description">
+
+            O futuro chegou ao limite.
+
+            Uma organização secreta acredita ter encontrado uma solução:
+            voltar ao passado e pedir ajuda a Jesus.
+
+            Mas o passado guarda uma pergunta que o futuro
+            tentou esquecer.
+
+          </p>
+
+
+          <div class="title-actions">
+
+            <button
+              id="newGameButton"
+              class="primary-button hero-button"
+              type="button"
+            >
+
+              <span>
+                INICIAR NOVA CRÔNICA
+              </span>
+
+              <small>
+                Começar pelo prólogo
+              </small>
+
+            </button>
+
+
+            <button
+              id="continueButton"
+              class="secondary-button hidden"
+              type="button"
+            >
+              CONTINUAR CRÔNICA
+            </button>
+
+          </div>
+
+
+          <div
+            class="title-footer"
+            aria-label="Informações técnicas"
+          >
+
+            <span>
+              HTML5
+            </span>
+
+            <i></i>
+
+            <span>
+              VANILLA JS
+            </span>
+
+            <i></i>
+
+            <span>
+              LOCAL SAVE
+            </span>
+
+            <i></i>
+
+            <span>
+              WEB AUDIO
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =======================================================
+           CINEMÁTICA
+           ======================================================= -->
+
+      <section
+        id="screenCinematic"
+        class="screen screen-cinematic"
+        aria-labelledby="cinematicTitle"
+      >
+
+        <div class="cinematic-frame">
+
+
+          <div class="cinematic-meta">
+
+            <span id="cinematicActLabel">
+              PRÓLOGO
+            </span>
+
+            <span id="cinematicSceneIndex">
+              01 / 06
+            </span>
+
+          </div>
+
+
+          <div class="cinematic-content">
+
+
+            <div
+              class="cinematic-orbit"
+              aria-hidden="true"
+            >
+
+              <span
+                class="orbit-ring ring-a"
+              ></span>
+
+              <span
+                class="orbit-ring ring-b"
+              ></span>
+
+              <span
+                class="orbit-ring ring-c"
+              ></span>
+
+              <span
+                class="orbit-core"
+              ></span>
+
+            </div>
+
+
+            <span class="eyebrow">
+              REGISTRO TEMPORAL
+            </span>
+
+
+            <h2 id="cinematicTitle">
+              O MUNDO DESTRUÍDO
+            </h2>
+
+
+            <p id="cinematicText"></p>
+
+          </div>
+
+
+          <div class="cinematic-controls">
+
+            <button
+              id="cinematicPrevious"
+              class="secondary-button"
+              type="button"
+            >
+              ANTERIOR
+            </button>
+
+
+            <button
+              id="cinematicNext"
+              class="primary-button"
+              type="button"
+            >
+              CONTINUAR
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =======================================================
+           JOGO
+           ======================================================= -->
+
+      <section
+        id="screenGame"
+        class="screen screen-game"
+        aria-label="Tela principal do jogo"
+      >
+
+
+        <!-- =====================================================
+             PAINEL ESQUERDO
+             ===================================================== -->
+
+        <aside class="left-panel panel">
+
+
+          <div class="panel-header">
+
+            <span>
+              ESTADO DO PROTAGONISTA
+            </span>
+
+            <span class="panel-code">
+              PLAYER_01
+            </span>
+
+          </div>
+
+
+          <div class="player-card">
+
+
+            <div
+              id="playerPortrait"
+              class="player-portrait"
+              aria-label="Retrato abstrato do protagonista"
+            >
+
+              <span class="portrait-halo"></span>
+
+              <span class="portrait-body"></span>
+
+              <span class="portrait-scan"></span>
+
+            </div>
+
+
+            <div class="player-info">
+
+              <strong id="playerNameDisplay">
+                O PROTAGONISTA
+              </strong>
+
+              <span id="playerRoleDisplay">
+                Viajante temporal
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- STATUS -->
+
+          <div class="stat-list">
+
+
+            <div class="stat-row stat-hope">
+
+              <div class="stat-label">
+
+                <span>
+                  Esperança
+                </span>
+
+                <strong id="hopeValue">
+                  0
+                </strong>
+
+              </div>
+
+
+              <div
+                class="stat-bar"
+                role="progressbar"
+                aria-label="Esperança"
+              >
+                <i id="hopeBar"></i>
+              </div>
+
+            </div>
+
+
+            <div class="stat-row stat-freedom">
+
+              <div class="stat-label">
+
+                <span>
+                  Liberdade
+                </span>
+
+                <strong id="freedomValue">
+                  0
+                </strong>
+
+              </div>
+
+
+              <div
+                class="stat-bar"
+                role="progressbar"
+                aria-label="Liberdade"
+              >
+                <i id="freedomBar"></i>
+              </div>
+
+            </div>
+
+
+            <div class="stat-row stat-control">
+
+              <div class="stat-label">
+
+                <span>
+                  Controle
+                </span>
+
+                <strong id="controlValue">
+                  0
+                </strong>
+
+              </div>
+
+
+              <div
+                class="stat-bar"
+                role="progressbar"
+                aria-label="Controle"
+              >
+                <i id="controlBar"></i>
+              </div>
+
+            </div>
+
+
+            <div class="stat-row stat-temporal">
+
+              <div class="stat-label">
+
+                <span>
+                  Estabilidade temporal
+                </span>
+
+                <strong id="temporalValue">
+                  100
+                </strong>
+
+              </div>
+
+
+              <div
+                class="stat-bar"
+                role="progressbar"
+                aria-label="Estabilidade temporal"
+              >
+                <i id="temporalBar"></i>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- HABILIDADES -->
+
+          <div class="panel-section">
+
+            <div class="section-title">
+              CAPACIDADES
+            </div>
+
+            <div
+              id="abilityList"
+              class="ability-list"
+            ></div>
+
+          </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             PAINEL CENTRAL
+             ===================================================== -->
+
+        <section class="center-panel">
+
+
+          <!-- MUNDO -->
+
+          <div
+            id="worldViewport"
+            class="world-viewport"
+          >
+
+
+            <div class="viewport-top">
+
+
+              <div>
+
+                <span
+                  id="locationAct"
+                  class="location-act"
+                >
+                  PRÓLOGO
+                </span>
+
+
+                <h2
+                  id="locationName"
+                  class="location-name"
+                >
+                  Megacidade
+                </h2>
+
+              </div>
+
+
+              <div class="time-readout">
+
+                <span>
+                  ERA
+                </span>
+
+                <strong id="eraValue">
+                  FUTURO
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <!-- CENÁRIO -->
+
+            <div
+              id="worldScene"
+              class="world-scene"
+              data-location="mega_city"
+            >
+
+              <div class="scene-sky"></div>
+
+              <div class="scene-moon"></div>
+
+              <div class="scene-horizon"></div>
+
+
+              <div
+                class="city-silhouette silhouette-far"
+              ></div>
+
+              <div
+                class="city-silhouette silhouette-mid"
+              ></div>
+
+              <div
+                class="city-silhouette silhouette-near"
+              ></div>
+
+
+              <div class="scene-ground"></div>
+
+              <div class="energy-barrier"></div>
+
+
+              <div class="drone drone-one">
+                <i></i>
+              </div>
+
+
+              <div class="drone drone-two">
+                <i></i>
+              </div>
+
+
+              <div class="scene-glitch"></div>
+
+
+              <div class="scene-caption">
+
+                <span id="sceneTag">
+                  ZONA DE CONFLITO
+                </span>
+
+
+                <strong id="sceneDescription">
+
+                  Região parcialmente funcional
+                  sobre uma área devastada.
+
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <!-- INTERAÇÃO -->
+
+            <div class="interaction-strip">
+
+
+              <div class="interaction-hint">
+
+                <span class="key-cap">
+                  E
+                </span>
+
+                <span id="interactionText">
+                  Explorar área
+                </span>
+
+              </div>
+
+
+              <div class="interaction-actions">
+
+
+                <button
+                  id="inspectButton"
+                  type="button"
+                  class="small-button"
+                >
+                  INSPECIONAR
+                </button>
+
+
+                <button
+                  id="questButton"
+                  type="button"
+                  class="small-button"
+                >
+                  MISSÕES
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ===================================================
+               DIÁLOGO
+               =================================================== -->
+
+          <div class="dialogue-panel panel">
+
+
+            <div class="dialogue-top">
+
+
+              <div>
+
+                <span
+                  id="dialogueSpeakerRole"
+                  class="dialogue-role"
+                >
+                  SISTEMA
+                </span>
+
+
+                <h3 id="dialogueSpeaker">
+                  PROTOCOLO CRONOLÓGICO
+                </h3>
+
+              </div>
+
+
+              <span
+                id="dialogueType"
+                class="dialogue-type"
+              >
+                NARRAÇÃO
+              </span>
+
+            </div>
+
+
+            <div class="dialogue-text-wrap">
+
+              <p
+                id="dialogueText"
+                class="dialogue-text"
+              ></p>
+
+              <span
+                id="typingCursor"
+                class="typing-cursor"
+                aria-hidden="true"
+              ></span>
+
+            </div>
+
+
+            <div
+              id="choiceContainer"
+              class="choice-container"
+            ></div>
+
+
+            <div class="dialogue-actions">
+
+
+              <button
+                id="dialogueContinueButton"
+                class="primary-button"
+                type="button"
+              >
+                CONTINUAR
+              </button>
+
+
+              <button
+                id="dialogueSkipButton"
+                class="secondary-button"
+                type="button"
+              >
+                PULAR TEXTO
+              </button>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PAINEL DIREITO
+             ===================================================== -->
+
+        <aside class="right-panel panel">
+
+
+          <div class="panel-header">
+
+            <span>
+              SISTEMAS
+            </span>
+
+            <span class="panel-code">
+              HUD
+            </span>
+
+          </div>
+
+
+          <div
+            class="system-tabs"
+            role="tablist"
+            aria-label="Sistemas do HUD"
+          >
+
+
+            <button
+              class="system-tab active"
+              data-tab="missionTab"
+              role="tab"
+              type="button"
+            >
+              MISSÕES
+            </button>
+
+
+            <button
+              class="system-tab"
+              data-tab="timelineTab"
+              role="tab"
+              type="button"
+            >
+              TEMPO
+            </button>
+
+
+            <button
+              class="system-tab"
+              data-tab="codexTab"
+              role="tab"
+              type="button"
+            >
+              CÓDEX
+            </button>
+
+          </div>
+
+
+          <!-- MISSÕES -->
+
+          <div
+            id="missionTab"
+            class="system-tab-content active"
+            role="tabpanel"
+          >
+
+            <div class="system-title-row">
+
+              <h3>
+                MISSÃO ATUAL
+              </h3>
+
+              <span id="missionCount">
+                0
+              </span>
+
+            </div>
+
+
+            <div
+              id="missionList"
+              class="mission-list"
+            ></div>
+
+          </div>
+
+
+          <!-- LINHA TEMPORAL -->
+
+          <div
+            id="timelineTab"
+            class="system-tab-content"
+            role="tabpanel"
+          >
+
+            <div class="timeline-core">
+
+              <div class="timeline-vertical"></div>
+
+
+              <div class="timeline-node completed">
+
+                <span>
+                  FUTURO
+                </span>
+
+                <small>
+                  Origem
+                </small>
+
+              </div>
+
+
+              <div class="timeline-node current">
+
+                <span>
+                  COORDENADA?
+                </span>
+
+                <small>
+                  Deslocamento
+                </small>
+
+              </div>
+
+
+              <div class="timeline-node locked">
+
+                <span>
+                  PASSADO
+                </span>
+
+                <small>
+                  Bloqueado no prólogo
+                </small>
+
+              </div>
+
+            </div>
+
+
+            <p class="timeline-note">
+
+              Pequenas alterações podem gerar consequências.
+
+              A máquina não permite viagens infinitas.
+
+            </p>
+
+          </div>
+
+
+          <!-- CÓDEX -->
+
+          <div
+            id="codexTab"
+            class="system-tab-content"
+            role="tabpanel"
+          >
+
+
+            <div class="codex-entry fixed-entry">
+
+              <span class="codex-label">
+                TEMA CENTRAL
+              </span>
+
+              <p>
+                O mundo não será salvo por alguém
+                fazendo o que nós mesmos recusamos fazer.
+              </p>
+
+            </div>
+
+
+            <div class="codex-entry fixed-entry">
+
+              <span class="codex-label">
+                QUESTÃO FINAL
+              </span>
+
+              <p>
+                Você queria salvar o mundo —
+                ou simplesmente queria evitar a responsabilidade
+                de lutar por ele?
+              </p>
+
+            </div>
+
+
+            <div class="codex-entry fixed-entry">
+
+              <span class="codex-label">
+                ARQUIVO
+              </span>
+
+              <p id="codexProgress">
+                0 registros desbloqueados.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="panel-bottom">
+
+
+            <button
+              id="openSaveButton"
+              class="small-button wide"
+              type="button"
+            >
+              SALVAR / CARREGAR
+            </button>
+
+
+            <button
+              id="openSettingsButton"
+              class="small-button wide"
+              type="button"
+            >
+              CONFIGURAÇÕES
+            </button>
+
+          </div>
+
+        </aside>
+
+      </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         MENU
+         ========================================================= -->
+
+    <div
+      id="menuOverlay"
+      class="overlay"
+      hidden
+    >
+
+      <div
+        class="modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="menuTitle"
+      >
+
+
+        <div class="modal-header">
+
+          <div>
+
+            <span class="modal-kicker">
+              SISTEMA
+            </span>
+
+            <h2 id="menuTitle">
+              PAINEL DA CRÔNICA
+            </h2>
+
+          </div>
+
+
+          <button
+            class="close-button"
+            data-close-overlay="menuOverlay"
+            type="button"
+            aria-label="Fechar"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+          <button
+            id="menuSave"
+            class="menu-card"
+            type="button"
+          >
+
+            <strong>
+              SALVAR / CARREGAR
+            </strong>
+
+            <span>
+              Gerenciar a progressão local.
+            </span>
+
+          </button>
+
+
+          <button
+            id="menuSettings"
+            class="menu-card"
+            type="button"
+          >
+
+            <strong>
+              CONFIGURAÇÕES
+            </strong>
+
+            <span>
+              Áudio, acessibilidade e interface.
+            </span>
+
+          </button>
+
+
+          <button
+            id="menuCodex"
+            class="menu-card"
+            type="button"
+          >
+
+            <strong>
+              CÓDEX
+            </strong>
+
+            <span>
+              Revisar informações descobertas.
+            </span>
+
+          </button>
+
+
+          <button
+            id="menuVisualLab"
+            class="menu-card"
+            type="button"
+          >
+
+            <strong>
+              LABORATÓRIO VISUAL
+            </strong>
+
+            <span>
+              Inspecionar DOM, CSS, JS e testes.
+            </span>
+
+          </button>
+
+
+          <button
+            id="menuRestart"
+            class="menu-card danger"
+            type="button"
+          >
+
+            <strong>
+              VOLTAR AO TÍTULO
+            </strong>
+
+            <span>
+              Retornar à tela inicial sem apagar o save.
+            </span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         SAVE
+         ========================================================= -->
+
+    <div
+      id="saveOverlay"
+      class="overlay"
+      hidden
+    >
+
+      <div
+        class="modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="saveTitle"
+      >
+
+
+        <div class="modal-header">
+
+          <div>
+
+            <span class="modal-kicker">
+              PROGRESSÃO
+            </span>
+
+            <h2 id="saveTitle">
+              SALVAR / CARREGAR
+            </h2>
+
+          </div>
+
+
+          <button
+            class="close-button"
+            data-close-overlay="saveOverlay"
+            type="button"
+            aria-label="Fechar"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <div class="save-grid">
+
+
+          <button
+            id="saveGameButton"
+            class="save-slot"
+            type="button"
+          >
+
+            <span class="save-slot-title">
+              SALVAR AGORA
+            </span>
+
+            <span id="saveCurrentLabel">
+              Nenhum save encontrado.
+            </span>
+
+          </button>
+
+
+          <button
+            id="loadGameButton"
+            class="save-slot"
+            type="button"
+          >
+
+            <span class="save-slot-title">
+              CARREGAR
+            </span>
+
+            <span id="loadCurrentLabel">
+              Nenhum save encontrado.
+            </span>
+
+          </button>
+
+
+          <button
+            id="deleteSaveButton"
+            class="save-slot danger"
+            type="button"
+          >
+
+            <span class="save-slot-title">
+              APAGAR SAVE
+            </span>
+
+            <span>
+              Remove o registro local desta crônica.
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <div
+          id="saveMessage"
+          class="modal-message"
+          aria-live="polite"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         CONFIGURAÇÕES
+         ========================================================= -->
+
+    <div
+      id="settingsOverlay"
+      class="overlay"
+      hidden
+    >
+
+      <div
+        class="modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="settingsTitle"
+      >
+
+
+        <div class="modal-header">
+
+          <div>
+
+            <span class="modal-kicker">
+              PREFERÊNCIAS
+            </span>
+
+            <h2 id="settingsTitle">
+              CONFIGURAÇÕES
+            </h2>
+
+          </div>
+
+
+          <button
+            class="close-button"
+            data-close-overlay="settingsOverlay"
+            type="button"
+            aria-label="Fechar"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <div class="settings-list">
+
+
+          <label class="setting-row">
+
+            <span>
+
+              <strong>
+                Texto rápido
+              </strong>
+
+              <small>
+                Reduz o tempo da digitação de diálogos.
+              </small>
+
+            </span>
+
+            <input
+              id="settingFastText"
+              type="checkbox"
+            >
+
+          </label>
+
+
+          <label class="setting-row">
+
+            <span>
+
+              <strong>
+                Alto contraste
+              </strong>
+
+              <small>
+                Aumenta a legibilidade dos elementos.
+              </small>
+
+            </span>
+
+            <input
+              id="settingHighContrast"
+              type="checkbox"
+            >
+
+          </label>
+
+
+          <label class="setting-row">
+
+            <span>
+
+              <strong>
+                Redução de movimento
+              </strong>
+
+              <small>
+                Desativa ou suaviza animações intensas.
+              </small>
+
+            </span>
+
+            <input
+              id="settingReducedMotion"
+              type="checkbox"
+            >
+
+          </label>
+
+
+          <label class="setting-row">
+
+            <span>
+
+              <strong>
+                Áudio da interface
+              </strong>
+
+              <small>
+                Ativa sons sintetizados pelo navegador.
+              </small>
+
+            </span>
+
+            <input
+              id="settingAudio"
+              type="checkbox"
+              checked
+            >
+
+          </label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         MISSÕES
+         ========================================================= -->
+
+    <div
+      id="questOverlay"
+      class="overlay"
+      hidden
+    >
+
+      <div
+        class="modal-panel wide-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="questTitle"
+      >
+
+
+        <div class="modal-header">
+
+          <div>
+
+            <span class="modal-kicker">
+              REGISTRO DE MISSÕES
+            </span>
+
+            <h2 id="questTitle">
+              MISSÕES
+            </h2>
+
+          </div>
+
+
+          <button
+            class="close-button"
+            data-close-overlay="questOverlay"
+            type="button"
+            aria-label="Fechar"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <div
+          id="questDetailList"
+          class="quest-detail-list"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         VISUAL LAB
+         ========================================================= -->
+
+    <div
+      id="visualLabOverlay"
+      class="overlay visual-lab-overlay"
+      hidden
+    >
+
+      <div
+        class="modal-panel visual-lab-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="visualLabTitle"
+      >
+
+
+        <div class="visual-lab-header">
+
+
+          <div>
+
+            <span class="modal-kicker">
+              ENGINEERING LAB
+            </span>
+
+            <h2 id="visualLabTitle">
+              LIVE ACTION PREVIEW
+            </h2>
+
+            <p class="visual-lab-subtitle">
+
+              Observação em tempo real do DOM,
+              CSS computado, eventos,
+              estado e testes internos do jogo.
+
+            </p>
+
+          </div>
+
+
+          <div class="visual-lab-live">
+
+            <span id="visualLabLiveDot"></span>
+
+            <strong id="visualLabLiveText">
+              OBSERVANDO
+            </strong>
+
+          </div>
+
+
+          <button
+            class="close-button"
+            data-close-overlay="visualLabOverlay"
+            type="button"
+            aria-label="Fechar laboratório"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <!-- TABS -->
+
+        <div class="visual-lab-toolbar">
+
+
+          <div
+            class="visual-lab-modes"
+            role="tablist"
+            aria-label="Camadas de inspeção"
+          >
+
+
+            <button
+              class="visual-lab-tab active"
+              data-lab-tab="preview"
+              role="tab"
+              aria-selected="true"
+              type="button"
+            >
+              PREVIEW
+            </button>
+
+
+            <button
+              class="visual-lab-tab"
+              data-lab-tab="dom"
+              role="tab"
+              aria-selected="false"
+              type="button"
+            >
+              DOM
+            </button>
+
+
+            <button
+              class="visual-lab-tab"
+              data-lab-tab="css"
+              role="tab"
+              aria-selected="false"
+              type="button"
+            >
+              CSS
+            </button>
+
+
+            <button
+              class="visual-lab-tab"
+              data-lab-tab="js"
+              role="tab"
+              aria-selected="false"
+              type="button"
+            >
+              JS
+            </button>
+
+
+            <button
+              class="visual-lab-tab"
+              data-lab-tab="tests"
+              role="tab"
+              aria-selected="false"
+              type="button"
+            >
+              TESTES
+            </button>
+
+          </div>
+
+
+          <div class="visual-lab-toolbar-actions">
+
+
+            <button
+              id="visualLabRefresh"
+              class="small-button"
+              type="button"
+            >
+              ATUALIZAR
+            </button>
+
+
+            <button
+              id="visualLabClear"
+              class="small-button"
+              type="button"
+            >
+              LIMPAR LOG
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- GRID -->
+
+        <div class="visual-lab-grid">
+
+
+          <section class="visual-lab-stage">
+
+
+            <div class="visual-lab-stage-head">
+
+              <span id="visualLabAction">
+                IDLE
+              </span>
+
+              <strong id="visualLabTarget">
+                #gameMain
+              </strong>
+
+              <small id="visualLabTimestamp">
+                aguardando evento
+              </small>
+
+            </div>
+
+
+            <div class="visual-lab-canvas-wrap">
+
+
+              <canvas
+                id="visualLabCanvas"
+                class="visual-lab-canvas"
+                width="960"
+                height="420"
+                aria-label="Gráfico de diagnóstico"
+              ></canvas>
+
+
+              <div
+                id="visualLabLivePreview"
+                class="visual-lab-live-preview"
+                aria-hidden="true"
+              ></div>
+
+
+              <div
+                class="visual-lab-overlay-grid"
+                aria-hidden="true"
+              ></div>
+
+
+              <span
+                class="visual-lab-hud-corner hud-tl"
+              ></span>
+
+              <span
+                class="visual-lab-hud-corner hud-tr"
+              ></span>
+
+              <span
+                class="visual-lab-hud-corner hud-bl"
+              ></span>
+
+              <span
+                class="visual-lab-hud-corner hud-br"
+              ></span>
+
+
+              <div
+                id="visualLabSelection"
+                class="visual-lab-selection"
+              ></div>
+
+            </div>
+
+
+            <!-- FLUXO -->
+
+            <div class="visual-lab-flow">
+
+
+              <div class="visual-lab-flow-node">
+
+                <span>
+                  01
+                </span>
+
+                <strong>
+                  EVENTO
+                </strong>
+
+                <small id="visualLabEvent">
+                  aguardando
+                </small>
+
+              </div>
+
+
+              <i></i>
+
+
+              <div class="visual-lab-flow-node">
+
+                <span>
+                  02
+                </span>
+
+                <strong>
+                  FUNÇÃO
+                </strong>
+
+                <small id="visualLabFunction">
+                  observar DOM
+                </small>
+
+              </div>
+
+
+              <i></i>
+
+
+              <div class="visual-lab-flow-node">
+
+                <span>
+                  03
+                </span>
+
+                <strong>
+                  STATE
+                </strong>
+
+                <small id="visualLabState">
+                  sincronizando
+                </small>
+
+              </div>
+
+
+              <i></i>
+
+
+              <div class="visual-lab-flow-node">
+
+                <span>
+                  04
+                </span>
+
+                <strong>
+                  DOM UPDATE
+                </strong>
+
+                <small id="visualLabDomUpdate">
+                  monitorando
+                </small>
+
+              </div>
+
+
+              <i></i>
+
+
+              <div class="visual-lab-flow-node">
+
+                <span>
+                  05
+                </span>
+
+                <strong>
+                  RESULTADO
+                </strong>
+
+                <small id="visualLabResult">
+                  pronto
+                </small>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- INSPECTOR -->
+
+          <aside class="visual-lab-inspector">
+
+
+            <section
+              class="visual-lab-panel-section active"
+              data-lab-panel="preview"
+            >
+
+              <div class="visual-lab-section-title">
+                CONTEXTO DO SISTEMA
+              </div>
+
+              <pre
+                id="visualLabContext"
+                class="visual-lab-context"
+              ></pre>
+
+            </section>
+
+
+            <section
+              class="visual-lab-panel-section"
+              data-lab-panel="dom"
+            >
+
+              <div class="visual-lab-section-title">
+                ÁRVORE DOM
+              </div>
+
+              <pre
+                id="visualLabDomTree"
+                class="visual-lab-tree"
+              ></pre>
+
+            </section>
+
+
+            <section
+              class="visual-lab-panel-section"
+              data-lab-panel="css"
+            >
+
+              <div class="visual-lab-section-title">
+                CSS COMPUTADO
+              </div>
+
+              <pre
+                id="visualLabCssMetrics"
+                class="visual-lab-metrics"
+              ></pre>
+
+            </section>
+
+
+            <section
+              class="visual-lab-panel-section"
+              data-lab-panel="js"
+            >
+
+              <div class="visual-lab-section-title">
+                FLUXO JAVASCRIPT
+              </div>
+
+              <pre
+                id="visualLabJsLog"
+                class="visual-lab-log"
+              ></pre>
+
+            </section>
+
+
+            <section
+              class="visual-lab-panel-section"
+              data-lab-panel="tests"
+            >
+
+              <div class="visual-lab-section-title">
+                AUTO-TESTE
+              </div>
+
+              <div
+                id="visualLabTests"
+                class="visual-lab-tests"
+              ></div>
+
+            </section>
+
+          </aside>
+
+        </div>
+
+
+        <!-- RODAPÉ DO LAB -->
+
+        <div class="visual-lab-footer">
+
+
+          <div>
+
+            <span>
+              OBSERVADORES
+            </span>
+
+            <strong id="visualLabObserverCount">
+              0
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              MUTAÇÕES
+            </span>
+
+            <strong id="visualLabMutationCount">
+              0
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              EVENTOS
+            </span>
+
+            <strong id="visualLabEventCount">
+              0
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              ÚLTIMO ALVO
+            </span>
+
+            <strong id="visualLabFooterTarget">
+              #gameMain
+            </strong>
+
+          </div>
+
+
+          <div class="visual-lab-shortcut">
+
+            <span>
+              ATALHOS
+            </span>
+
+            <strong>
+              ESC / CTRL+S / E / ENTER
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         NOTIFICAÇÕES
+         ========================================================= -->
+
+    <div
+      id="notificationStack"
+      class="notification-stack"
+      aria-live="polite"
+      aria-atomic="false"
+    ></div>
+
+
+    <!-- =========================================================
+         TRANSIÇÃO
+         ========================================================= -->
+
+    <div
+      id="fadeTransition"
+      class="fade-transition"
+      aria-hidden="true"
+    ></div>
+
+  </div>
+
+</body>
+</html>
